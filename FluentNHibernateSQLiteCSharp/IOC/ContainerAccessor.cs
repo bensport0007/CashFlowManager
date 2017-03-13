@@ -1,13 +1,5 @@
-﻿using FluentNHibernateSQLiteCSharp;
+﻿using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CashFlowManagerDomain.IOC
 {
@@ -18,7 +10,6 @@ namespace CashFlowManagerDomain.IOC
         public static void ConfigureContainer(IUnityContainer container)
         {
             _container = container;
-
         }
 
         public static IUnityContainer Container()
@@ -29,15 +20,12 @@ namespace CashFlowManagerDomain.IOC
 
         public static T Resolve<T>()
         {
-            T ret = default(T);
+            var ret = default(T);
 
             if (_container.IsRegistered(typeof(T)))
-            {
                 ret = _container.Resolve<T>();
-            }
 
             return ret;
         }
-        
     }
 }

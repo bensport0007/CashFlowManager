@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
+﻿namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
 {
     public enum TransactionType
     {

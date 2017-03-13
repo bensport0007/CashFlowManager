@@ -21,7 +21,7 @@ namespace CashFlowManager.Transactions
     {
         public TransactionsViewer()
         {
-            InitializeComponent();
+           // InitializeComponent();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace CashFlowManager.Donators
                 if (_propertyToFilterOn == string.Empty ||
                     _valueToFilterOn == string.Empty) return _donatorsList;
 
-                var pinfo = typeof(Donator).GetProperty(_propertyToFilterOn);
+                var pinfo = typeof(Donator).GetProperty(_propertyToFilterOn);   //TODO:Filter better... use generics ?
                 return _donatorsList.Where(x => pinfo.GetValue(x, null).ToString() == _valueToFilterOn).ToList();
             }
             set { _donatorsList = value; }
@@ -67,14 +67,16 @@ namespace CashFlowManager.Donators
                 OnPropertyChanged(() => DonatorsList);
             }
         }
-        
+
         private void InitializeFilterCriterias()
         {
             _filterProperties = new List<string>();
 
             if (DonatorsList.Count > 0)
+            {
                 foreach (var property in DonatorsList.First().GetType().GetProperties())
                     _filterProperties.Add(property.Name);
+            }
         }
 
         public ICommand SaveChangesCommand { get; set; }

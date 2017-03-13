@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
+﻿namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
 {
-    interface IPost
+    internal interface IPost
     {
         string Description { get; }
         int Id { get; }

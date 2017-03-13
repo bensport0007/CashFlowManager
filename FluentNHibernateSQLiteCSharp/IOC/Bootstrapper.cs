@@ -1,5 +1,6 @@
 ﻿using CashFlowManagerDomain.IOC;
 using FluentNHibernateSQLiteCSharp.Services;
+using FluentNHibernateSQLiteCSharp.Session;
 using Microsoft.Practices.Unity;
 using NHibernate;
 

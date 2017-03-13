@@ -1,22 +1,19 @@
-﻿using FluentNHibernateSQLiteCSharp.Entities;
-using FluentNHibernateSQLiteCSharp.Entities.Interfaces;
-using FluentNHibernateSQLiteCSharp.IOC;
-using NHibernate;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernateSQLiteCSharp.Session;
 using CashFlowManagerDomain.IOC;
+using FluentNHibernateSQLiteCSharp.Entities;
+using NHibernate;
 
-namespace FluentNHibernateSQLiteCSharp
+namespace FluentNHibernateSQLiteCSharp.Session
 {
     public class QueryHelper<TConcreteType> : IQueryHelper<TConcreteType> where TConcreteType : BaseEntity
     {
-        private ISession _session;
+        private readonly ISession _session;
 
-        public QueryHelper() : this(ContainerAccessor.Resolve<ISession>()) { }
+        public QueryHelper() : this(ContainerAccessor.Resolve<ISession>())
+        {
+        }
 
         public QueryHelper(ISession session)
         {

@@ -1,42 +1,36 @@
-﻿using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate;
-using FluentNHibernate.Cfg.Db;
-using NHibernate.Tool.hbm2ddl;
-using NHibernate.Cfg;
+﻿using System.IO;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using FluentNHibernateSQLiteCSharp.Entities.Interfaces;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 
-namespace FluentNHibernateSQLiteCSharp
+namespace FluentNHibernateSQLiteCSharp.Session
 {
     public static class SessionManager
     {
-        private const string DATABASE_NAME = "CashFlowManager.db";
-        private static ISession _session = null;
+        private const string DatabaseName = "CashFlowManager.db";
+        private static ISession _session;
 
         private static ISessionFactory CreateSessionFactory()
         {
             return Fluently.Configure()
-              .Database(SQLiteConfiguration.Standard.UsingFile(DATABASE_NAME))
-              .Mappings(m => m.FluentMappings.AddFromAssemblyOf<IBaseEntity>())
-              .ExposeConfiguration(BuildSchema)
-              .BuildSessionFactory();
+                .Database(SQLiteConfiguration.Standard.UsingFile(DatabaseName))
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<IBaseEntity>())
+                .ExposeConfiguration(BuildSchema)
+                .BuildSessionFactory();
         }
-        
+
         private static void BuildSchema(Configuration config)
         {
-            if (!File.Exists(DATABASE_NAME))
+            if (!File.Exists(DatabaseName))
             {
-                File.Delete(DATABASE_NAME);
+                File.Delete(DatabaseName);
                 new SchemaExport(config).Create(false, true);
             }
         }
-              
+
         public static ISession GetInstance()
         {
             if (_session == null)

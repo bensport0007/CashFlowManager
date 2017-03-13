@@ -1,7 +1,4 @@
-﻿using FluentNHibernateSQLiteCSharp.Entities.Interfaces;
-using System;
-
-namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
+﻿namespace FluentNHibernateSQLiteCSharp.Entities.Interfaces
 {
     public interface IDonator
     {
