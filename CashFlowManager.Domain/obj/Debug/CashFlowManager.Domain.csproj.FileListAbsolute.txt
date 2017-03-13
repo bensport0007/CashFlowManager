@@ -1,0 +1,1 @@
+D:\Users\Ben\Documents\Visual Studio 2013\Projects\FluentNHibernateSQLiteCSharp\CashFlowManager.Domain\obj\Debug\CashFlowManager.Domain.csprojResolveAssemblyReference.cache
