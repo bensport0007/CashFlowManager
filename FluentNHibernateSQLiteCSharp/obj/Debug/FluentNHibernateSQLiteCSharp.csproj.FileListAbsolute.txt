@@ -30,3 +30,34 @@ D:\Users\Ben\Documents\Visual Studio 2013\Projects\FluentNHibernateSQLiteCSharp\
 D:\Users\Ben\Documents\Visual Studio 2013\Projects\FluentNHibernateSQLiteCSharp\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.exe
 D:\Users\Ben\Documents\Visual Studio 2013\Projects\FluentNHibernateSQLiteCSharp\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.pdb
 D:\Users\Ben\Documents\Visual Studio 2013\Projects\FluentNHibernateSQLiteCSharp\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernateSQLiteCSharp.exe.config
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernateSQLiteCSharp.exe
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernateSQLiteCSharp.pdb
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\EntityFramework.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernate.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Iesi.Collections.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\NHibernate.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\System.Data.SQLite.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\EntityFramework.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernate.pdb
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\FluentNHibernate.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Iesi.Collections.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\NHibernate.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\bin\Debug\System.Data.SQLite.xml
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.Properties.Resources.resources
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.csproj.GenerateResource.Cache
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.exe
+C:\Users\Ben\Source\Repos\CashFlowManager\FluentNHibernateSQLiteCSharp\obj\Debug\FluentNHibernateSQLiteCSharp.pdb
