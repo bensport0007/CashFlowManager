@@ -1,11 +1,7 @@
 ﻿using CashFlowManagerDomain.IOC;
+using FluentNHibernateSQLiteCSharp.Services;
 using Microsoft.Practices.Unity;
 using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FluentNHibernateSQLiteCSharp.IOC
 {
@@ -14,7 +10,8 @@ namespace FluentNHibernateSQLiteCSharp.IOC
         public static void ConfigureIoC(IUnityContainer container)
         {
             ContainerAccessor.ConfigureContainer(container);
-            container.RegisterInstance<ISession>(SessionManager.GetInstance());
+            container.RegisterInstance(SessionManager.GetInstance());
+            container.RegisterInstance<IDataPersistenceService>(new DataPersistenceService(container.Resolve<ISession>()));
         }
     }
 }

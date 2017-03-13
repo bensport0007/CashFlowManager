@@ -117,4 +117,7 @@
   <data name="DonatorViewModel_Title_Donators" xml:space="preserve">
     <value>Donators</value>
   </data>
+  <data name="TransactionViewModel_Title_Transaction" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
 </root>

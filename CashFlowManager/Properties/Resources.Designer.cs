@@ -68,5 +68,14 @@ namespace CashFlowManager.Properties {
                 return ResourceManager.GetString("DonatorViewModel_Title_Donators", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transactions.
+        /// </summary>
+        internal static string TransactionViewModel_Title_Transaction {
+            get {
+                return ResourceManager.GetString("TransactionViewModel_Title_Transaction", resourceCulture);
+            }
+        }
     }
 }

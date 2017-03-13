@@ -123,6 +123,7 @@
       <DependentUpon>TransactionsViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transactions\TransactionViewModel.cs" />
+    <Compile Include="ViewerViewModelBase.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="Donators\DonatorsViewer.xaml">
       <SubType>Designer</SubType>

@@ -1,8 +1,53 @@
-﻿<Window x:Class="CashFlowManager.Transactions.TransactionsViewer"
+﻿<Window x:Class="CashFlowManager.Donators.TransactionsViewer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TransactionsViewer"
-        Width="300"
-        Height="300">
-    <Grid />
+        Title="{Binding Title}"
+        Width="752.25"
+        Height="371"
+        DataContext="{Binding DonatorViewModel,
+                              Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="16*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <TextBox Width="160"
+                 Height="22"
+                 Margin="574,10,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="{Binding ValueToFilterOn,
+                                UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap" />
+        <ComboBox Grid.Row="0"
+                  Margin="386,10,196,0"
+                  ItemsSource="{Binding FilterList}"
+                  SelectedItem="{Binding PropertyToFilterOn}" />
+
+        <TextBlock Grid.Row="0" Margin="10,10,458,0">
+            <InlineUIContainer />
+        </TextBlock>
+        <DataGrid x:Name="DonatorsDataGrid"
+                  Grid.Row="1"
+                  Margin="10,10,10,0"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Top"
+                  HorizontalContentAlignment="Stretch"
+                  AlternatingRowBackground="AntiqueWhite"
+                  DataContext="{Binding DonatorsList,
+                                        Mode=TwoWay,
+                                        UpdateSourceTrigger=LostFocus,
+                                        NotifyOnTargetUpdated=True}"
+                  ItemsSource="{Binding}"
+                  VerticalScrollBarVisibility="Auto" />
+        <StackPanel Grid.Row="2"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <Button Width="150"
+                    Margin="10,10,10,10"
+                    Command="{Binding SaveChangesCommand}"
+                    Content="Add" />
+        </StackPanel>
+    </Grid>
 </Window>

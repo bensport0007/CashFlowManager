@@ -7,7 +7,7 @@ using FluentNHibernateSQLiteCSharp.Services;
 
 namespace CashFlowManager.Donators
 {
-    public class DonatorViewModel : ViewModelBase
+    public class DonatorViewModel : ViewerViewModelBase
     {
         private readonly IDonatorService _donatorService;
         private IList<Donator> _donatorsList;

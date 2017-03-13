@@ -127,9 +127,10 @@
     <Compile Include="Mappings\StoreMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DonatorService.cs" />
+    <Compile Include="Services\IDataPersistenceService.cs" />
     <Compile Include="Services\IDonatorService.cs" />
     <Compile Include="Services\ITransactionService.cs" />
-    <Compile Include="Services\PersistenceService.cs" />
+    <Compile Include="Services\DataPersistenceService.cs" />
     <Compile Include="Services\TransactionService.cs" />
     <Compile Include="Session\IQueryHelper.cs" />
     <Compile Include="Session\QueryHelper.cs" />

@@ -1,8 +1,7 @@
 ﻿<Window x:Class="CashFlowManager.Donators.DonatorsViewer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:cashFlowManager="clr-namespace:CashFlowManager"
-        Title="DonatorsViewer"
+        Title="{Binding Title}"
         Width="752.25"
         Height="371"
         DataContext="{Binding DonatorViewModel,

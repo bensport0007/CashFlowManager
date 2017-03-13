@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FluentNHibernateSQLiteCSharp.Entities;
 using FluentNHibernateSQLiteCSharp.Session;
-using NHibernate;
 
 namespace FluentNHibernateSQLiteCSharp.Services
 {
     public class DonatorService : IDonatorService
     {
+        private readonly IDataPersistenceService _dataPersistenceService;
         private readonly IQueryHelper<Donator> _donatorQuerier;
-        private readonly ISession _session;
 
-        public DonatorService(IQueryHelper<Donator> donatorQuerier, ISession session)
+        public DonatorService(IQueryHelper<Donator> donatorQuerier, IDataPersistenceService dataPersistenceService)
         {
             _donatorQuerier = donatorQuerier;
-            _session = session;
+            _dataPersistenceService = dataPersistenceService;
         }
 
         public IList<Donator> GetAllDonators()
@@ -24,19 +22,16 @@ namespace FluentNHibernateSQLiteCSharp.Services
 
         public void PersistDonators(IList<Donator> objectsToPersist)
         {
-            var serv = new PersistenceService(_session);
+            var donatorsAsObjects = DonatorsAsObjects(objectsToPersist);
+            _dataPersistenceService.PersistData(donatorsAsObjects);
+        }
 
-            var transaction = _session.BeginTransaction();
-            foreach(var items in objectsToPersist)
-            { 
-                //_session.SaveOrUpdate(items);
-                serv.PersistData(items);
-            }
-            transaction.Commit();
-
-            
-            
-            
+        private static IEnumerable<object> DonatorsAsObjects(IEnumerable<Donator> objectsToPersist)
+        {
+            var donatorsAsObjects = new List<object>();
+            foreach (var obj in objectsToPersist)
+                donatorsAsObjects.Add(obj);
+            return donatorsAsObjects;
         }
     }
 }
