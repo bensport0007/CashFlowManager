@@ -12,7 +12,7 @@ namespace FluentNHibernateSQLiteCSharp.IOC
         {
             ContainerAccessor.ConfigureContainer(container);
             container.RegisterInstance(SessionManager.GetInstance());
-            container.RegisterInstance<IDataPersistenceService>(new DataPersistenceService(container.Resolve<ISession>()));
+            container.RegisterType<ICanPersistData, DataPersistenceService>(); //new DataPersistenceService(container.Resolve<ISession>()));
         }
     }
 }

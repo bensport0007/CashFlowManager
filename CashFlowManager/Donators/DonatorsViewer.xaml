@@ -35,7 +35,7 @@
                   VerticalAlignment="Top"
                   HorizontalContentAlignment="Stretch"
                   AlternatingRowBackground="AntiqueWhite"
-                  DataContext="{Binding DonatorsList,
+                  DataContext="{Binding ItemsList,
                                         Mode=TwoWay,
                                         UpdateSourceTrigger=LostFocus,
                                         NotifyOnTargetUpdated=True}"

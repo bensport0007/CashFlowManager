@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using CashFlowManager.Donators;
-using CashFlowManager.IOC;
-using Microsoft.Practices.Unity;
+using CashFlowManager.Transactions;
 
 namespace CashFlowManager
 {
@@ -10,15 +9,24 @@ namespace CashFlowManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IDonatorForm _donatorForm;
+        private readonly ITransactionForm _transactionForm;
+
+        public MainWindow(IDonatorForm donatorForm, ITransactionForm transactionForm) //TODO:Use navigation service ?
         {
+            _donatorForm = donatorForm;
+            _transactionForm = transactionForm;
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var donatorForms = DependencyFactory.Container.Resolve<DonatorsViewer>();
-            donatorForms.ShowDialog();
+            _donatorForm.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            _transactionForm.ShowDialog();
         }
     }
 }

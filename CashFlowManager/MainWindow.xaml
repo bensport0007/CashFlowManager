@@ -25,7 +25,8 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Content="Transactions"
-                        DockPanel.Dock="Bottom" />
+                        DockPanel.Dock="Bottom"
+                        Click="Button_Click_1" />
             </StackPanel>
         </DockPanel>
     </Grid>

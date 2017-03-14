@@ -6,6 +6,5 @@ namespace FluentNHibernateSQLiteCSharp.Services
     public interface IDonatorService
     {
         IList<Donator> GetAllDonators();
-        void PersistDonators(IList<Donator> objectsToPersist);
     }
 }

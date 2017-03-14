@@ -1,6 +1,7 @@
 ﻿using FluentNHibernateSQLiteCSharp; // Application, StartupEventArgs, WindowState
 using System.Windows;
 using CashFlowManager.IOC;
+using Microsoft.Practices.Unity;
 
 namespace CashFlowManager
 {
@@ -14,10 +15,13 @@ namespace CashFlowManager
 
         private void StartViaBootStrapper()
         {
-            var bootstrapper = new Bootstrapper();
+            var container = DependencyFactory.Container;
+            var bootstrapper = new Bootstrapper(container);
             bootstrapper.ConfigureIoC();
 
-            MainWindow mainWindow = new MainWindow();
+            var mainWindow = container.Resolve<MainWindow>();
+
+            //MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
 

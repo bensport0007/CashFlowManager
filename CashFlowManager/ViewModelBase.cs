@@ -6,9 +6,11 @@ using CashFlowManager.Annotations;
 
 namespace CashFlowManager
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public abstract string Title { get; set; }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
