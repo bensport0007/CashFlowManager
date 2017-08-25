@@ -1,4 +1,5 @@
-﻿using FluentNHibernateSQLiteCSharp.Entities.Interfaces;
+﻿using System;
+using FluentNHibernateSQLiteCSharp.Entities.Interfaces;
 
 namespace FluentNHibernateSQLiteCSharp.Entities
 {
@@ -6,6 +7,9 @@ namespace FluentNHibernateSQLiteCSharp.Entities
     {
         public virtual int Id { get; set; }
         public virtual int Number { get; set; }
+        public virtual PostType Type { get; set; }
+        public virtual DateTime UntilDate { get; set; }
         public virtual string Description { get; set; }
     }
+
 }

@@ -1,9 +1,4 @@
-﻿using CashFlowManager.Donators;
-using CashFlowManager.Transactions;
-using FluentNHibernateSQLiteCSharp.Entities;
-using FluentNHibernateSQLiteCSharp.Services;
-using FluentNHibernateSQLiteCSharp.Session;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 
 namespace CashFlowManager.IOC
 {
@@ -18,18 +13,24 @@ namespace CashFlowManager.IOC
 
         public void ConfigureIoC()
         {
+            _container.RegisterTypes(
+                AllClasses.FromLoadedAssemblies(),
+                WithMappings.FromMatchingInterface,
+                WithName.Default,
+                WithLifetime.ContainerControlled);
+
             FluentNHibernateSQLiteCSharp.IOC.Bootstrapper.ConfigureIoC(_container);
 
-            _container.RegisterType<IDonatorForm, DonatorsViewer>();
-            _container.RegisterType<IDonatorService, DonatorService>();
-            _container.RegisterType<ISearchFilter<Donator>, SearchFilter<Donator>>();
-            _container.RegisterType<IQueryHelper<Donator>, QueryHelper<Donator>>();
+            //_container.RegisterType<IDonatorsViewer, DonatorsViewer>();
+            //_container.RegisterType<IDonatorService, DonatorService>();
+            //_container.RegisterType<ISearchFilter<Donator>, SearchFilter<Donator>>();
+            //_container.RegisterType<IQueryHelper<Donator>, QueryHelper<Donator>>();
 
-            
-            _container.RegisterType<ITransactionForm, TransactionsViewer>();
-            _container.RegisterType<ITransactionService, TransactionService>();
-            _container.RegisterType<ISearchFilter<Transaction>, SearchFilter<Transaction>>();
-            _container.RegisterType<IQueryHelper<Transaction>, QueryHelper<Transaction>>();
+
+            //_container.RegisterType<ITransactionsViewer, TransactionsViewer>();
+            //_container.RegisterType<ITransactionService, TransactionService>();
+            //_container.RegisterType<ISearchFilter<Transaction>, SearchFilter<Transaction>>();
+            //_container.RegisterType<IQueryHelper<Transaction>, QueryHelper<Transaction>>();
         }
     }
 }

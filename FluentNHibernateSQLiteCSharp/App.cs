@@ -54,12 +54,12 @@ namespace FluentNHibernateSQLiteCSharp
                     //var donator = _session.CreateCriteria<Donator>().List<Donator>().Where(x => x.Number == 1).FirstOrDefault();
                     var post = _session.CreateCriteria<Post>().List<Post>().FirstOrDefault();
 
-                    if (donator == null)
-                    {
-                        var donator1 = new Donator {Number = 1, FirstName = "toto", LastName="pipo"};
-                        _session.SaveOrUpdate(donator1);
-                        donator = _session.CreateCriteria<Donator>().List<Donator>().FirstOrDefault(x => x.Id == 1);
-                    }
+                    //if (donator == null)
+                    //{
+                    //    var donator1 = new Donator {Number = 1, FirstName = "toto", LastName="pipo"};
+                    //    _session.SaveOrUpdate(donator1);
+                    //    donator = _session.CreateCriteria<Donator>().List<Donator>().FirstOrDefault(x => x.Id == 1);
+                    //}
 
                     if (post == null)
                     {

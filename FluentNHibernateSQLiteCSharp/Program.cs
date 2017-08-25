@@ -9,7 +9,7 @@ namespace FluentNHibernateSQLiteCSharp
     {
         public static void Main()
         {
-            ContainerAccessor.Container().RegisterInstance(SessionManager.GetInstance());
+            ContainerAccessor.Container().RegisterInstance(SessionManager.GetInstance(ContainerAccessor.Container()));
             ContainerAccessor.Container().RegisterInstance<IQueryHelper<Transaction>>(new QueryHelper<Transaction>());
             ContainerAccessor.Container().RegisterInstance<IQueryHelper<Donator>>(new QueryHelper<Donator>());
 

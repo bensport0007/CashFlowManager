@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using CashFlowManager.Donators;
+using CashFlowManager.Posts;
 using CashFlowManager.Transactions;
 
 namespace CashFlowManager
@@ -9,24 +10,33 @@ namespace CashFlowManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly IDonatorForm _donatorForm;
-        private readonly ITransactionForm _transactionForm;
+        private readonly IDonatorsViewer _donatorsViewer;
+        private readonly ITransactionsViewer _transactionsViewer;
+        private readonly IPostsViewer _postsViewer;
 
-        public MainWindow(IDonatorForm donatorForm, ITransactionForm transactionForm) //TODO:Use navigation service ?
+        public MainWindow(IDonatorsViewer donatorsViewer,
+            ITransactionsViewer transactionsViewer,
+            IPostsViewer postsViewer) //TODO:Use navigation service ?
         {
-            _donatorForm = donatorForm;
-            _transactionForm = transactionForm;
+            _donatorsViewer = donatorsViewer;
+            _transactionsViewer = transactionsViewer;
+            _postsViewer = postsViewer;
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Donators_Click(object sender, RoutedEventArgs e)
         {
-            _donatorForm.ShowDialog();
+            _donatorsViewer.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Transactions_Click(object sender, RoutedEventArgs e)
         {
-            _transactionForm.ShowDialog();
+            _transactionsViewer.ShowDialog();
+        }
+
+        private void Posts_Click(object sender, RoutedEventArgs e)
+        {
+            _postsViewer.ShowDialog();
         }
     }
 }

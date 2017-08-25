@@ -1,11 +1,9 @@
-﻿using System.Windows;
-
-namespace CashFlowManager.Transactions
+﻿namespace CashFlowManager.Transactions
 {
     /// <summary>
-    ///     Interaction logic for TransactionsViewer.xaml
+    ///     Logique d'interaction pour TransactionsViewer.xaml
     /// </summary>
-    public partial class TransactionsViewer : Window, ITransactionForm
+    public partial class TransactionsViewer : ITransactionsViewer
     {
         public TransactionsViewer()
         {

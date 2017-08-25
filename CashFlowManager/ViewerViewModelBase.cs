@@ -1,24 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using FluentNHibernateSQLiteCSharp.Services;
+using FluentNHibernateSQLiteCSharp.Validations;
 
 namespace CashFlowManager
 {
     public class ViewerViewModelBase<T> : ViewModelBase
     {
-        
         private readonly ICanPersistData _dataPersistenceService;
         private readonly ISearchFilter<T> _searchfilter;
-        private IEnumerable<T> _itemsList;
+        private readonly IValidationService _validationService;
         private IList<string> _filterProperties;
+        private IEnumerable<T> _itemsList;
         private string _propertyToFilterOn;
         private string _valueToFilterOn;
+        private IList<ValidationFailuresDto> _validationMessages;
 
-        public ViewerViewModelBase(ICanPersistData dataPersistenceService, ISearchFilter<T> searchfilter )
+        public ViewerViewModelBase(ICanPersistData dataPersistenceService, ISearchFilter<T> searchfilter,
+            IValidationService validationService)
         {
             _dataPersistenceService = dataPersistenceService;
             _searchfilter = searchfilter;
+            _validationService = validationService;
             _valueToFilterOn = _propertyToFilterOn = string.Empty;
             _itemsList = new List<T>();
             SaveChangesCommand = new RelayCommand(param => PersistData());
@@ -27,10 +32,7 @@ namespace CashFlowManager
 
         public IEnumerable<T> ItemsList
         {
-            get
-            {
-                return _searchfilter.Filter(_propertyToFilterOn, _valueToFilterOn, _itemsList);
-            }
+            get { return _searchfilter.Filter(_propertyToFilterOn, _valueToFilterOn, _itemsList); }
             set { _itemsList = value; }
         }
 
@@ -61,6 +63,8 @@ namespace CashFlowManager
 
         public ICommand SaveChangesCommand { get; set; }
 
+        public override string Title { get; set; }
+
         protected void InitializeFilterCriterias()
         {
             _filterProperties = new List<string>();
@@ -77,12 +81,25 @@ namespace CashFlowManager
             return ListAsObjects;
         }
 
-        protected void PersistData()
+        public string ValidationMessages
         {
-            IEnumerable<object> objList = ListAsObjectList(ItemsList);
-            _dataPersistenceService.PersistObjectsList(objList);
+            get
+            {
+                foreach (var validationFailuresDto in _validationMessages)
+                {
+                    return validationFailuresDto.Message;
+                }
+                return string.Empty;
+            }
         }
 
-        public override string Title { get; set; }
+        protected void PersistData()
+        {
+            var objList = ListAsObjectList(ItemsList);
+            var objectsToUpdateList = objList as object[] ?? objList.ToArray();
+
+            _validationMessages = _validationService.ValidateObjectList(objectsToUpdateList);
+            _dataPersistenceService.PersistObjectsList(objectsToUpdateList);
+        }
     }
 }

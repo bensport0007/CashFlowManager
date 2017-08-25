@@ -1,4 +1,4 @@
-﻿using FluentNHibernateSQLiteCSharp; // Application, StartupEventArgs, WindowState
+﻿using FluentNHibernateSQLiteCSharp;
 using System.Windows;
 using CashFlowManager.IOC;
 using Microsoft.Practices.Unity;

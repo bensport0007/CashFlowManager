@@ -4,7 +4,7 @@
         Title="{Binding Title}"
         Width="752.25"
         Height="371"
-        DataContext="{Binding TransactionViewModel,
+        DataContext="{Binding TransactionsViewerViewModel,
                               Source={StaticResource ViewModelLocator}}">
     <Grid>
         <Grid.RowDefinitions>

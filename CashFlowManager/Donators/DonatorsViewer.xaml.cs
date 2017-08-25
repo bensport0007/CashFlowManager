@@ -5,7 +5,7 @@ namespace CashFlowManager.Donators
     /// <summary>
     ///     Interaction logic for DonatorsViewer.xaml
     /// </summary>
-    public partial class DonatorsViewer : Window, IDonatorForm
+    public partial class DonatorsViewer : Window, IDonatorsViewer
     {
         public DonatorsViewer()
         {

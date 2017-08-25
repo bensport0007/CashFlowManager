@@ -8,7 +8,9 @@ namespace FluentNHibernateSQLiteCSharp.Mappings
         public PostMap()
         {
             Id(x => x.Id);
-            Map(x => x.Number).Unique();
+            Map(x => x.Number);
+            Map(x => x.Type);
+            Map(x => x.UntilDate);
             Map(x => x.Description);
         }
     }
